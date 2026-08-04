@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>積立投資シミュレーション</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel controls-panel">
+        <h1>積立投資シミュレーション</h1>
+        <p class="lead">元本・積立額・年利率・運用年数を動かすと、将来の資産推移が自動で更新されます。</p>
+
+        <div class="control-group">
+          <label for="principal">元本</label>
+          <div class="control-row">
+            <input id="principal" type="range" min="0" max="100000000" step="10000" value="1000000" />
+            <output id="principalValue">1,000,000円</output>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="monthly">積立（月額）</label>
+          <div class="control-row">
+            <input id="monthly" type="range" min="0" max="500000" step="1000" value="100000" />
+            <output id="monthlyValue">100,000円</output>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="rate">年利率</label>
+          <div class="control-row">
+            <input id="rate" type="range" min="0" max="20" step="0.1" value="5" />
+            <output id="rateValue">5.0%</output>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="years">運用期間</label>
+          <div class="control-row">
+            <input id="years" type="range" min="1" max="40" step="1" value="20" />
+            <output id="yearsValue">20年</output>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel result-panel">
+        <div class="summary-grid">
+          <article class="summary-card">
+            <h2>最終残高</h2>
+            <p id="finalBalance">0円</p>
+          </article>
+          <article class="summary-card">
+            <h2>総投資額</h2>
+            <p id="totalContribution">0円</p>
+          </article>
+          <article class="summary-card">
+            <h2>運用益</h2>
+            <p id="profit">0円</p>
+          </article>
+        </div>
+
+        <div class="chart-wrap">
+          <svg id="chart" viewBox="0 0 700 320" role="img" aria-label="積立投資の資産推移グラフ"></svg>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
