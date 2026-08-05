@@ -47,7 +47,7 @@ function getProjection(principal, monthly, annualRate, years) {
 function renderChart(balances, years) {
   const width = 700;
   const height = 320;
-  const padding = { top: 24, right: 24, bottom: 40, left: 90 };
+  const padding = { top: 24, right: 24, bottom: 40, left: 80 };
   const innerWidth = width - padding.left - padding.right;
   const innerHeight = height - padding.top - padding.bottom;
 
