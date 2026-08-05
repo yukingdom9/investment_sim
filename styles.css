@@ -33,9 +33,24 @@ body {
   backdrop-filter: blur(8px);
 }
 
+.panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.78rem;
+  color: #6a7280;
+}
+
 h1 {
   margin: 0 0 8px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .lead {
