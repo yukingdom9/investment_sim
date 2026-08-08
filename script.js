@@ -25,9 +25,9 @@ const formatPercent = (value) => `${value.toFixed(1)}%`;
 const formatYAxisLabel = (value) => {
   if (value >= 100000000) {
     const billions = value / 100000000;
-    return `${billions.toFixed(billions % 1 === 0 ? 0 : 1)}億`;
+    return `${billions.toFixed(billions % 1 === 0 ? 0 : 1)}億円`;
   }
-  return `${Math.round(value / 10000).toLocaleString('ja-JP')}万`;
+  return `${Math.round(value / 10000).toLocaleString('ja-JP')}万円`;
 };
 
 function getProjection(principal, monthly, annualRate, years) {
@@ -75,7 +75,7 @@ function renderChart(balances, years) {
     const y = padding.top + (innerHeight / 4) * index;
     const value = maxValue - (valueRange / 4) * index;
     const label = formatYAxisLabel(value);
-    return `<line x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4"></line><text x="${padding.left - 12}" y="${y + 4}" text-anchor="end" fill="#92a4c0" font-size="12">${label}</text>`;
+    return `<line x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4"></line><text x="${padding.left - 12}" y="${y + 4}" text-anchor="end" fill="#92a4c0" font-size="10.5">${label}</text>`;
   }).join('');
 
   const xLabels = Array.from({ length: 5 }, (_, index) => {
