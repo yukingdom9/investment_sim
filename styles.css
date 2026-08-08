@@ -63,17 +63,22 @@ h1 {
   margin-bottom: 18px;
 }
 
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
 label {
   display: block;
-  margin-bottom: 8px;
   font-weight: 600;
+  margin: 0;
 }
 
 .control-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-  align-items: center;
+  display: block;
 }
 
 input[type="range"] {
@@ -86,6 +91,7 @@ output {
   text-align: right;
   font-weight: 700;
   color: #8fd3ff;
+  margin-left: auto;
 }
 
 .summary-grid {
