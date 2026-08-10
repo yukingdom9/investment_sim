@@ -89,7 +89,7 @@ function renderChart(balances, years) {
     ${gridLines}
     <line x1="${padding.left}" y1="${height - padding.bottom}" x2="${width - padding.right}" y2="${height - padding.bottom}" stroke="#a9b7cc"></line>
     <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${height - padding.bottom}" stroke="#a9b7cc"></line>
-    <polyline fill="none" stroke="#24466f" stroke-width="3" points="${points}"></polyline>
+    <polyline fill="none" stroke="#336485" stroke-width="3" points="${points}"></polyline>
     ${xLabels}
   `;
 }
