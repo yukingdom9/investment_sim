@@ -75,21 +75,21 @@ function renderChart(balances, years) {
     const y = padding.top + (innerHeight / 4) * index;
     const value = maxValue - (valueRange / 4) * index;
     const label = formatYAxisLabel(value);
-    return `<line x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4"></line><text x="${padding.left - 12}" y="${y + 4}" text-anchor="end" fill="#92a4c0" font-size="10.5">${label}</text>`;
+    return `<line x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}" stroke="#dbe2ec"></line><text x="${padding.left - 12}" y="${y + 4}" text-anchor="end" fill="#7b8aa3" font-size="10.5">${label}</text>`;
   }).join('');
 
   const xLabels = Array.from({ length: 5 }, (_, index) => {
     const x = padding.left + (innerWidth / 4) * index;
     const year = Math.round((years / 4) * index);
-    return `<text x="${x}" y="${height - 12}" text-anchor="middle" fill="#92a4c0" font-size="12">${year === 0 ? '0年' : `${year}年`}</text>`;
+    return `<text x="${x}" y="${height - 12}" text-anchor="middle" fill="#7b8aa3" font-size="12">${year === 0 ? '0年' : `${year}年`}</text>`;
   }).join('');
 
   chartEl.innerHTML = `
-    <rect x="0" y="0" width="${width}" height="${height}" rx="18" fill="rgba(255,255,255,0.03)"></rect>
+    <rect x="0" y="0" width="${width}" height="${height}" rx="18" fill="#ffffff" stroke="#dbe2ec"></rect>
     ${gridLines}
-    <line x1="${padding.left}" y1="${height - padding.bottom}" x2="${width - padding.right}" y2="${height - padding.bottom}" stroke="#92a4c0"></line>
-    <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${height - padding.bottom}" stroke="#92a4c0"></line>
-    <polyline fill="none" stroke="#4c7dff" stroke-width="3" points="${points}"></polyline>
+    <line x1="${padding.left}" y1="${height - padding.bottom}" x2="${width - padding.right}" y2="${height - padding.bottom}" stroke="#a9b7cc"></line>
+    <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${height - padding.bottom}" stroke="#a9b7cc"></line>
+    <polyline fill="none" stroke="#24466f" stroke-width="3" points="${points}"></polyline>
     ${xLabels}
   `;
 }
